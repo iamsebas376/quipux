@@ -6,7 +6,6 @@
     ]"
     :style="{ width: isSidebarCollapsed ? '60px' : '250px' }"
   >
-    <!-- Header -->
     <div class="p-3 d-flex justify-content-between align-items-center">
       <button
         @click="toggleSidebar"
@@ -22,8 +21,6 @@
         style="width: 100px; height: auto; margin-left: auto"
       />
     </div>
-
-    <!-- Titulo y separador -->
     <div
       v-if="!isSidebarCollapsed"
       class="menu-title px-3 py-2"
@@ -35,8 +32,6 @@
       v-if="!isSidebarCollapsed"
       style="border-color: var(--sidebar-title-color); margin: 0 15px"
     />
-
-    <!-- Menu Items -->
     <div class="sidebar-menu flex-grow-1 overflow-auto mt-2">
       <div v-for="section in sections" :key="section.name" class="menu-section">
         <div
@@ -63,8 +58,6 @@
             >
             </i>
           </div>
-
-          <!-- Submenus -->
           <div
             v-if="!isSidebarCollapsed && isDropdownOpen(section.name)"
             class="submenu bg-opacity-25"
@@ -156,6 +149,7 @@ export default {
 @media (max-width: 768px) {
   .sidebar {
     width: 100% !important;
+    height: 100vh;
   }
 }
 

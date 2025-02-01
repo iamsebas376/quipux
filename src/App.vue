@@ -1,5 +1,8 @@
 <template>
-  <div class="d-flex flex-column min-vh-100">
+  <div
+    :class="{ 'no-scroll': !isSidebarCollapsed }"
+    class="d-flex flex-column min-vh-100"
+  >
     <Sidebar
       :isSidebarCollapsed="isSidebarCollapsed"
       :toggleSidebar="toggleSidebar"
@@ -33,12 +36,17 @@ export default {
   },
   data() {
     return {
-      isSidebarCollapsed: false,
+      isSidebarCollapsed: true,
     };
   },
   methods: {
     toggleSidebar() {
       this.isSidebarCollapsed = !this.isSidebarCollapsed;
+      if (this.isSidebarCollapsed) {
+        document.body.classList.remove("no-scroll");
+      } else {
+        document.body.classList.add("no-scroll");
+      }
     },
   },
 };
@@ -53,6 +61,17 @@ export default {
   position: fixed;
   background-color: var(--sidebar-color);
   transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+    height: 100vh;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .sidebar-menu {
