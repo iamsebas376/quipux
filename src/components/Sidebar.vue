@@ -67,6 +67,7 @@
               :key="submenu.name"
               :to="submenu.path"
               class="submenu-item d-flex align-items-center text-white text-decoration-none ps-5 py-2"
+              @click="closeSidebar"
             >
               <hr class="submenu-separator me-2" />
               <span>{{ submenu.name }}</span>
@@ -125,6 +126,14 @@ export default {
         this.activeSection =
           this.activeSection === sectionName ? null : sectionName;
       }
+    },
+    closeSidebar() {
+      if (!this.isSidebarCollapsed && this.isMobile()) {
+        this.toggleSidebar();
+      }
+    },
+    isMobile() {
+      return window.innerWidth <= 768;
     },
     isDropdownOpen(sectionName) {
       return this.activeSection === sectionName;
