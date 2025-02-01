@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "title": "Bienvenido a Quipux",
+      "description": "Descubre nuestros servicios y beneficios.",
+      "image": "path/to/image1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Servicios Personalizados",
+      "description": "Ofrecemos soluciones a medida para tus necesidades.",
+      "image": "path/to/image2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Soporte 24/7",
+      "description": "Estamos aquí para ayudarte en cualquier momento.",
+      "image": "path/to/image3.jpg"
+    }
+  ]
+}

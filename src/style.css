@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --background-color: #f7f9fa;
+  --sidebar-color: #302634;
+  --sidebar-btn-hover-color: #201923;
+  --sidebar-btn-text-hover-color: #09d394;
+  --gray-color: #8b8a8a;
+  --card-color: #ffffff;
+  --highlight-color: #109fe9;
+
+}
+
+body {
+  background-color: var(--background-color);
+}
